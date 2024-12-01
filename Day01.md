@@ -11,17 +11,17 @@ it correctly.
 ```c
 void solve1()
 {
-	int left[1000], right[1000];
-	for (int i = 0; i < n; i++)
-	{
-		char *s = d[i];
-		left[i] = parse_number(&s);
-		while (*s == ' ') s++;
-		right[i] = parse_number(&s);
-		
-		printf("%d   %d\n", left[i], right[i]);
-	}
-	
+    int left[1000], right[1000];
+    for (int i = 0; i < n; i++)
+    {
+        char *s = d[i];
+        left[i] = parse_number(&s);
+        while (*s == ' ') s++;
+        right[i] = parse_number(&s);
+        
+        printf("%d   %d\n", left[i], right[i]);
+    }
+    
 }
 ```
 
@@ -37,21 +37,21 @@ int compare(const void* a, const void* b) {
 
 void solve1()
 {
-	int left[1000], right[1000];
-	for (int i = 0; i < n; i++)
-	{
-		char *s = d[i];
-		left[i] = parse_number(&s);
-		while (*s == ' ') s++;
-		right[i] = parse_number(&s);
-	}
-	qsort(left, n, sizeof(left[0]), compare);
-	qsort(right, n, sizeof(right[0]), compare);
-	
-	for (int i = 0; i < n; i++)
-	{
-		printf("%d   %d\n", left[i], right[i]);
-	}
+    int left[1000], right[1000];
+    for (int i = 0; i < n; i++)
+    {
+        char *s = d[i];
+        left[i] = parse_number(&s);
+        while (*s == ' ') s++;
+        right[i] = parse_number(&s);
+    }
+    qsort(left, n, sizeof(left[0]), compare);
+    qsort(right, n, sizeof(right[0]), compare);
+    
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d   %d\n", left[i], right[i]);
+    }
 }
 ```
 
@@ -62,25 +62,25 @@ difference between the numbers, resulting in:
 
 void solve1()
 {
-	int left[1000], right[1000];
-	for (int i = 0; i < n; i++)
-	{
-		char *s = d[i];
-		left[i] = parse_number(&s);
-		while (*s == ' ') s++;
-		right[i] = parse_number(&s);
-	}
-	qsort(left, n, sizeof(left[0]), compare);
-	qsort(right, n, sizeof(right[0]), compare);
+    int left[1000], right[1000];
+    for (int i = 0; i < n; i++)
+    {
+        char *s = d[i];
+        left[i] = parse_number(&s);
+        while (*s == ' ') s++;
+        right[i] = parse_number(&s);
+    }
+    qsort(left, n, sizeof(left[0]), compare);
+    qsort(right, n, sizeof(right[0]), compare);
 
-	int sum = 0;	
-	for (int i = 0; i < n; i++)
-		sum += abs(left[i] - right[i]);
-	printf("%d\n", sum);
+    int sum = 0;    
+    for (int i = 0; i < n; i++)
+        sum += abs(left[i] - right[i]);
+    printf("%d\n", sum);
 }
 ```
 
-At 18:59, that gave me the correct answer and the first star.
+At 6:18:59, that gave me the correct answer and the first star.
 I felt that this first puzzle is a bit difficulter than the
 usual first puzzles. I think that someone being proficient with
 a spreadsheet program could solve it rather quickly.
@@ -94,40 +94,40 @@ the sorting of the first part of the puzzle.
 ```c
 void solve2()
 {
-	int left[1000], right[1000];
-	for (int i = 0; i < n; i++)
-	{
-		char *s = d[i];
-		left[i] = parse_number(&s);
-		while (*s == ' ') s++;
-		right[i] = parse_number(&s);
-	}
+    int left[1000], right[1000];
+    for (int i = 0; i < n; i++)
+    {
+        char *s = d[i];
+        left[i] = parse_number(&s);
+        while (*s == ' ') s++;
+        right[i] = parse_number(&s);
+    }
 
-	num_t sum = 0;
-	for (int i = 0; i < n; i++)
-		for (int j = 0; j < n; j++)
-			if (left[i] == right[j])
-				sum += left[i];
-	printf("%d\n", sum);
+    num_t sum = 0;
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
+            if (left[i] == right[j])
+                sum += left[i];
+    printf("%d\n", sum);
 }
 
 ```
 
-At 25:06, I found the answer to the second part of the puzzle
+At 6:25:06, I found the answer to the second part of the puzzle
 after a second try, due to a small mistake in the code.
 
 I came up with a small improvement for the base program mentioned
 on the [a standard library](Std.md), when I realized that the last two
 letters of the program name, `day01`, can be used to read the matching
 input file.
-	
+
 ### Executing this page
 
 The command to process this markdown file, is:
 ```
 ../IParse/software/MarkDownC Std.md Day01.md >day01.c; gcc -g -Wall day01.c -o day01; ./day01 01
 ```
-I run the bash file [`runOnSave.sh`](runOnSave.sh] with `01` as the argument,
+I run the bash file [`runOnSave.sh`](runOnSave.sh) with `01` as the argument,
 which everytime when I save this file, runs the above command and shows the
 result or the first compile errors, if there are any.
 

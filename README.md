@@ -3,7 +3,7 @@
 My effort of the [Advent of Code 2024](https://adventofcode.com/2024) contest.
 All times are for Central European Timezone (CTE).
 
-### Sunday, December 1, 2023
+### Sunday, December 1, 2024
 
 I woke up at 5:40 got up and started working at 6:00.
 

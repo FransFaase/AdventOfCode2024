@@ -31,13 +31,13 @@ void read_input(const char *day)
 {
     n = 0;
     m = 0;
-   	char filename[50];
-   	sprintf(filename, "input/day%s.txt", day);
+    char filename[50];
+    sprintf(filename, "input/day%s.txt", day);
     FILE *f = fopen(filename, "r");
     if (f == 0)
     {
-    	printf("Cannot open file %s\n", filename);
-    	exit(1);
+        printf("Cannot open file %s\n", filename);
+        exit(1);
     }
     int fh = fileno(f);
     size_t length = lseek(fh, 0L, SEEK_END);
@@ -62,27 +62,28 @@ void read_input(const char *day)
         {
             if (*s == '\r)
                 *s = '\0';
-           	else
-           		j++;
+               else
+                   j++;
             s++;
         }
         if (j > m)
-        	m = j;
+            m = j;
         *s++ = '\0';
     }
 }
 
 int main(int argc, char *argv[])
 {
-	if (argc != 2)
-	{
-		printf("Expect one argumnet\n");
-		return 0;
-	}
-	read_input(argv[1]);
-	
-	solve1();
-	solve2();
+	int len = strlen(argv[0]);
+	if (len <= 2)
+    {
+        printf("Program name should be longer than two.\n");
+        return 0;
+    }
+    read_input(argv[0] + len - 2);
+    
+    solve1();
+    solve2();
 }
 
 ```
@@ -285,9 +286,9 @@ int num_t_sign(num_t a) { return a < 0 ? -1 : a > 0 ? 1 : 0; }
 ```c
 char *copy_str(char *s)
 {
-	char *r = (char*)malloc(strlen(s) + 1);
-	strcpy(r, s);
-	return r;
+    char *r = (char*)malloc(strlen(s) + 1);
+    strcpy(r, s);
+    return r;
 }
 ```
  

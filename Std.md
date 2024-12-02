@@ -74,8 +74,8 @@ void read_input(const char *day)
 
 int main(int argc, char *argv[])
 {
-	int len = strlen(argv[0]);
-	if (len <= 2)
+    int len = strlen(argv[0]);
+    if (len <= 2)
     {
         printf("Program name should be longer than two.\n");
         return 0;

@@ -1,4 +1,4 @@
-# Day $ of Advent of Code 2024
+# Day 3 of Advent of Code 2024
 
 The code below makes use of [a standard library](Std.md), which
 also contains the `main` function that reads the input in the global variable `d`
@@ -97,9 +97,9 @@ correct answer at 2:16:43.
 
 The command to process this markdown file, is:
 ```
-../IParse/software/MarkDownC Std.md Day$.md >day$.c; gcc -g -Wall day$.c -o day$; ./day$ $
+../IParse/software/MarkDownC Std.md Day03.md >day03.c; gcc -g -Wall day03.c -o day03; ./day03 03
 ```
-I run the bash file [`runOnSave.sh`](runOnSave.sh] with `$` as the argument,
+I run the bash file [`runOnSave.sh`](runOnSave.sh) with `03` as the argument,
 which everytime when I save this file, runs the above command and shows the
 result or the first compile errors, if there are any.
 

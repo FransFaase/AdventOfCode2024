@@ -582,7 +582,7 @@ The command to process this markdown file, is:
 ```
 ../IParse/software/MarkDownC Std.md Day02.md >day02.c; gcc -g -Wall day02.c -o day02; ./day02 02
 ```
-I run the bash file [`runOnSave.sh`](runOnSave.sh] with `02` as the argument,
+I run the bash file [`runOnSave.sh`](runOnSave.sh) with `02` as the argument,
 which everytime when I save this file, runs the above command and shows the
 result or the first compile errors, if there are any.
 

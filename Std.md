@@ -26,13 +26,14 @@ typedef char *char_p;
 char **d;
 int n;
 int m;
+bool use_sample = FALSE;
 
 void read_input(const char *day)
 {
     n = 0;
     m = 0;
     char filename[50];
-    sprintf(filename, "input/day%s.txt", day);
+    sprintf(filename, use_sample ? "day%s.txt" : "input/day%s.txt", day);
     FILE *f = fopen(filename, "r");
     if (f == 0)
     {
@@ -72,6 +73,10 @@ void read_input(const char *day)
     }
 }
 
+void pre()
+{
+}
+
 int main(int argc, char *argv[])
 {
     int len = strlen(argv[0]);
@@ -80,6 +85,9 @@ int main(int argc, char *argv[])
         printf("Program name should be longer than two.\n");
         return 0;
     }
+    
+    pre();
+    
     read_input(argv[0] + len - 2);
     
     solve1();

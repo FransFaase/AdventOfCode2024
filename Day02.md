@@ -5,6 +5,8 @@ also contains the `main` function that reads the input in the global variable `d
 where `n` contains the number of lines and `m` the length of the longest line,
 and than calls the function `solve1` and `solve2`.
 
+I started around 6:00 while I did not feel very well.
+
 ```c
 void solve1()
 {
@@ -32,6 +34,7 @@ void solve1()
 }
 ```
 
+The above solution did not work.
 
 
 ```c
@@ -74,8 +77,13 @@ void solve1()
 }
 ```
 
+It took me several iterations to find the correct solution.
+
 
 ### Second part of the puzzle.
+
+At first, I thought it was easy and that it was just enough
+to count the number of correct transitions.
 
 ```c
 void solve1()
@@ -442,6 +450,9 @@ void solve2()
 }
 ```
 
+After many uncessful attempts, I decided to go for a more solid solution with some
+additional functions.
+
 ```c
 
 bool all_incr(int m, int *num)
@@ -495,6 +506,56 @@ void solve2()
 		else
 		{
 			for (int skip = 1; skip < m - 1; skip++)
+			{
+				int num[40];
+				int j2 = 0;
+				for (int j = 0; j < m; j++)
+					if (j != skip)
+						num[j2++] = numbers[j];
+				if (all_incr(j2, num) || all_decr(j2, num))
+				{
+					safe++;
+					printf("%d OK skip %d", i, skip);
+					break;
+				}
+			}
+		}
+		printf("\n");
+	}
+	printf("%d\n", safe);
+}
+```
+
+When the above did not work, I decided to quit. But after some time, I
+reealized that the first and the last number might also be excluded
+from the list. There are no examples of this in the example input, but the
+description does not exclude it.
+
+
+```c
+void solve2()
+{
+	int safe = 0;
+	for (int i = 0; i < n; i++)
+	{
+		char *s = d[i];
+		int numbers[40];
+		int m = 0;
+		numbers[m++] = parse_number(&s);
+		while (*s == ' ')
+		{
+			s++;
+			numbers[m++] = parse_number(&s);
+		}
+		
+		if (all_incr(m, numbers) || all_decr(m, numbers))
+		{
+			safe++;
+			printf("%d OK", i);
+		}
+		else
+		{
+			for (int skip = 0; skip < m; skip++)
 			{
 				int num[40];
 				int j2 = 0;

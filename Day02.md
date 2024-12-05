@@ -450,7 +450,7 @@ void solve2()
 }
 ```
 
-After many uncessful attempts, I decided to go for a more solid solution with some
+After many unsuccessful attempts, I decided to go for a more solid solution with some
 additional functions.
 
 ```c

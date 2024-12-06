@@ -11,16 +11,16 @@ I started reading the puzzle text at 21:21 in the evening. Looks not too complex
 ```c
 void solve1()
 {
-	// find the starting position of the guard
-	int gi, gj;
-	for (int i = 0; i < n; i++)
-		for (int j = 0; j < m; j++)
-			if (d[i][j] == '^')
-			{
-				gi = i;
-				gj = j;
-			}
-	printf("%d, %d\n", gi, gj);
+    // find the starting position of the guard
+    int gi, gj;
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < m; j++)
+            if (d[i][j] == '^')
+            {
+                gi = i;
+                gj = j;
+            }
+    printf("%d, %d\n", gi, gj);
 }
 ```
 
@@ -33,36 +33,36 @@ char dd(int i, int j) { return i < 0 || i >= n || j < 0 || j >= m ? ' ' : d[i][j
 
 void solve1()
 {
-	// find the starting position of the guard
-	int gi, gj;
-	for (int i = 0; i < n; i++)
-		for (int j = 0; j < m; j++)
-			if (d[i][j] == '^')
-			{
-				gi = i;
-				gj = j;
-			}
-	
-	int visited = 0;
-	int dir = 0;
-	for (;;)
-	{
-		if (gi < 0 || gi >= n || gj < 0 || gj >= m)
-			break;
-			
-		if (d[gi][gj] != 'X')
-			visited++;
-		d[gi][gj] = 'X';
-		
-		if (dd(gi + di[dir], gj + dj[dir]) == '#')
-			dir = (dir + 1) % 4;
-		else
-		{
-			gi += di[dir];
-			gj += dj[dir];
-		}
-	}
-	printf("%d\n", visited);
+    // find the starting position of the guard
+    int gi, gj;
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < m; j++)
+            if (d[i][j] == '^')
+            {
+                gi = i;
+                gj = j;
+            }
+    
+    int visited = 0;
+    int dir = 0;
+    for (;;)
+    {
+        if (gi < 0 || gi >= n || gj < 0 || gj >= m)
+            break;
+            
+        if (d[gi][gj] != 'X')
+            visited++;
+        d[gi][gj] = 'X';
+        
+        if (dd(gi + di[dir], gj + dj[dir]) == '#')
+            dir = (dir + 1) % 4;
+        else
+        {
+            gi += di[dir];
+            gj += dj[dir];
+        }
+    }
+    printf("%d\n", visited);
 }
 ```
 
@@ -88,91 +88,91 @@ int sgi, sgj;
 
 void solve1()
 {
-	// find the starting position of the guard
-	int gi, gj;
-	for (int i = 0; i < n; i++)
-		for (int j = 0; j < m; j++)
-			if (d[i][j] == '^')
-			{
-				gi = i;
-				gj = j;
-			}
+    // find the starting position of the guard
+    int gi, gj;
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < m; j++)
+            if (d[i][j] == '^')
+            {
+                gi = i;
+                gj = j;
+            }
 
-	sgi = gi;
-	sgj = gj;	
+    sgi = gi;
+    sgj = gj;    
 
-	int visited = 0;
-	int dir = 0;
-	for (;;)
-	{
-		if (gi < 0 || gi >= n || gj < 0 || gj >= m)
-			break;
-			
-		if (d[gi][gj] != 'X')
-			visited++;
-		d[gi][gj] = 'X';
-		
-		if (dd(gi + di[dir], gj + dj[dir]) == '#')
-			dir = (dir + 1) % 4;
-		else
-		{
-			gi += di[dir];
-			gj += dj[dir];
-		}
-	}
-	printf("%d\n", visited);
+    int visited = 0;
+    int dir = 0;
+    for (;;)
+    {
+        if (gi < 0 || gi >= n || gj < 0 || gj >= m)
+            break;
+            
+        if (d[gi][gj] != 'X')
+            visited++;
+        d[gi][gj] = 'X';
+        
+        if (dd(gi + di[dir], gj + dj[dir]) == '#')
+            dir = (dir + 1) % 4;
+        else
+        {
+            gi += di[dir];
+            gj += dj[dir];
+        }
+    }
+    printf("%d\n", visited);
 }
 
 bool left[200][200][4];
 
 void solve2()
 {
-	int nr_sol = 0;
-	for (int i = 0; i < n; i++)
-		for (int j = 0; j < m; j++)
-			if ((i != sgi || j != sgj) && d[i][j] == 'X')
-			{
-				// place an extra object at this location
-				char save = d[i][j];
-				d[i][j] = '#';
-				
-				for (int i2 = 0; i2 < n; i2++)
-					for (int j2 = 0; j2 < n; j2++)
-						for (int dir = 0; dir < 4; dir++)
-							left[i2][j2][dir] = FALSE;
+    int nr_sol = 0;
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < m; j++)
+            if ((i != sgi || j != sgj) && d[i][j] == 'X')
+            {
+                // place an extra object at this location
+                char save = d[i][j];
+                d[i][j] = '#';
+                
+                for (int i2 = 0; i2 < n; i2++)
+                    for (int j2 = 0; j2 < n; j2++)
+                        for (int dir = 0; dir < 4; dir++)
+                            left[i2][j2][dir] = FALSE;
 
-				int gi = i;
-				int gj = j;
-				int dir = 0;
-				bool cycle = FALSE;
-				for (;;)
-				{
-					if (gi < 0 || gi >= n || gj < 0 || gj >= m)
-						break;
-						
-					if (left[gi][gj][dir])
-					{
-						cycle = TRUE;
-						break;
-					}
-					left[gi][gj][dir] = TRUE;
+                int gi = i;
+                int gj = j;
+                int dir = 0;
+                bool cycle = FALSE;
+                for (;;)
+                {
+                    if (gi < 0 || gi >= n || gj < 0 || gj >= m)
+                        break;
+                        
+                    if (left[gi][gj][dir])
+                    {
+                        cycle = TRUE;
+                        break;
+                    }
+                    left[gi][gj][dir] = TRUE;
 
-					if (dd(gi + di[dir], gj + dj[dir]) == '#')
-						dir = (dir + 1) % 4;
-					else
-					{
-						gi += di[dir];
-						gj += dj[dir];
-					}
-				}
-				
-				if (cycle)
-					nr_sol++;
-				
-				// remove the object
-				d[i][j] = save;
-			}
-	printf("%d\n", nr_sol);
+                    if (dd(gi + di[dir], gj + dj[dir]) == '#')
+                        dir = (dir + 1) % 4;
+                    else
+                    {
+                        gi += di[dir];
+                        gj += dj[dir];
+                    }
+                }
+                
+                if (cycle)
+                    nr_sol++;
+                
+                // remove the object
+                d[i][j] = save;
+            }
+    printf("%d\n", nr_sol);
 }
 
 ```
@@ -183,7 +183,7 @@ Lets try the algorithm on the example puzzle.
 ```c
 void pre()
 {
-	use_sample = TRUE;
+    use_sample = TRUE;
 }
 ```
 
@@ -192,55 +192,55 @@ It returns 0 for the second part of the puzzle.
 ```c
 void solve2()
 {
-	int nr_sol = 0;
-	for (int i = 0; i < n; i++)
-		for (int j = 0; j < m; j++)
-			if ((i != sgi || j != sgj) && d[i][j] == 'X')
-			{
-				// place an extra object at this location
-				char save = d[i][j];
-				d[i][j] = '#';
-				
-				for (int i2 = 0; i2 < n; i2++)
-					for (int j2 = 0; j2 < m; j2++)
-						for (int dir = 0; dir < 4; dir++)
-							left[i2][j2][dir] = FALSE;
+    int nr_sol = 0;
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < m; j++)
+            if ((i != sgi || j != sgj) && d[i][j] == 'X')
+            {
+                // place an extra object at this location
+                char save = d[i][j];
+                d[i][j] = '#';
+                
+                for (int i2 = 0; i2 < n; i2++)
+                    for (int j2 = 0; j2 < m; j2++)
+                        for (int dir = 0; dir < 4; dir++)
+                            left[i2][j2][dir] = FALSE;
 
-				printf("Try %d,%d: ", i, j);
-				int gi = i;
-				int gj = j;
-				int dir = 0;
-				bool cycle = FALSE;
-				for (;;)
-				{
-					if (gi < 0 || gi >= n || gj < 0 || gj >= m)
-						break;
-						
-					if (left[gi][gj][dir])
-					{
-						cycle = TRUE;
-						break;
-					}
-					left[gi][gj][dir] = TRUE;
+                printf("Try %d,%d: ", i, j);
+                int gi = i;
+                int gj = j;
+                int dir = 0;
+                bool cycle = FALSE;
+                for (;;)
+                {
+                    if (gi < 0 || gi >= n || gj < 0 || gj >= m)
+                        break;
+                        
+                    if (left[gi][gj][dir])
+                    {
+                        cycle = TRUE;
+                        break;
+                    }
+                    left[gi][gj][dir] = TRUE;
 
-					if (dd(gi + di[dir], gj + dj[dir]) == '#')
-						dir = (dir + 1) % 4;
-					else
-					{
-						gi += di[dir];
-						gj += dj[dir];
-					}
-					printf(" %d,%d", gi, gj);
-				}
-				
-				if (cycle)
-					nr_sol++;
-				
-				// remove the object
-				d[i][j] = save;
-				printf("\n");
-			}
-	printf("%d\n", nr_sol);
+                    if (dd(gi + di[dir], gj + dj[dir]) == '#')
+                        dir = (dir + 1) % 4;
+                    else
+                    {
+                        gi += di[dir];
+                        gj += dj[dir];
+                    }
+                    printf(" %d,%d", gi, gj);
+                }
+                
+                if (cycle)
+                    nr_sol++;
+                
+                // remove the object
+                d[i][j] = save;
+                printf("\n");
+            }
+    printf("%d\n", nr_sol);
 }
 
 ```
@@ -251,52 +251,52 @@ let the guard start at the wrong location.
 ```c
 void solve2()
 {
-	int nr_sol = 0;
-	for (int i = 0; i < n; i++)
-		for (int j = 0; j < m; j++)
-			if ((i != sgi || j != sgj) && d[i][j] == 'X')
-			{
-				// place an extra object at this location
-				char save = d[i][j];
-				d[i][j] = '#';
-				
-				for (int i2 = 0; i2 < n; i2++)
-					for (int j2 = 0; j2 < m; j2++)
-						for (int dir = 0; dir < 4; dir++)
-							left[i2][j2][dir] = FALSE;
+    int nr_sol = 0;
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < m; j++)
+            if ((i != sgi || j != sgj) && d[i][j] == 'X')
+            {
+                // place an extra object at this location
+                char save = d[i][j];
+                d[i][j] = '#';
+                
+                for (int i2 = 0; i2 < n; i2++)
+                    for (int j2 = 0; j2 < m; j2++)
+                        for (int dir = 0; dir < 4; dir++)
+                            left[i2][j2][dir] = FALSE;
 
-				int gi = sgi;
-				int gj = sgj;
-				int dir = 0;
-				bool cycle = FALSE;
-				for (;;)
-				{
-					if (gi < 0 || gi >= n || gj < 0 || gj >= m)
-						break;
-						
-					if (left[gi][gj][dir])
-					{
-						cycle = TRUE;
-						break;
-					}
-					left[gi][gj][dir] = TRUE;
+                int gi = sgi;
+                int gj = sgj;
+                int dir = 0;
+                bool cycle = FALSE;
+                for (;;)
+                {
+                    if (gi < 0 || gi >= n || gj < 0 || gj >= m)
+                        break;
+                        
+                    if (left[gi][gj][dir])
+                    {
+                        cycle = TRUE;
+                        break;
+                    }
+                    left[gi][gj][dir] = TRUE;
 
-					if (dd(gi + di[dir], gj + dj[dir]) == '#')
-						dir = (dir + 1) % 4;
-					else
-					{
-						gi += di[dir];
-						gj += dj[dir];
-					}
-				}
-				
-				if (cycle)
-					nr_sol++;
-				
-				// remove the object
-				d[i][j] = save;
-			}
-	printf("%d\n", nr_sol);
+                    if (dd(gi + di[dir], gj + dj[dir]) == '#')
+                        dir = (dir + 1) % 4;
+                    else
+                    {
+                        gi += di[dir];
+                        gj += dj[dir];
+                    }
+                }
+                
+                if (cycle)
+                    nr_sol++;
+                
+                // remove the object
+                d[i][j] = save;
+            }
+    printf("%d\n", nr_sol);
 }
 
 ```

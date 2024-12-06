@@ -14,29 +14,29 @@ bool before[100][100];
 
 void read_before()
 {
-	for (int i = 0; i < 100; i++)
-		for (int j = 0; j < 100; j++)
-			before[i][j] = FALSE;
-	
-	for (int i = 0; i < n; i++)
-	{
-		char *s = d[i];
-		if (*s == '\0')
-		{
-			start_books = i + 1;
-			break;
-		}
-		int v1 = parse_number(&s);
-		s++;
-		int v2 = parse_number(&s);
-		before[v1][v2] = TRUE;
-	}
+    for (int i = 0; i < 100; i++)
+        for (int j = 0; j < 100; j++)
+            before[i][j] = FALSE;
+    
+    for (int i = 0; i < n; i++)
+    {
+        char *s = d[i];
+        if (*s == '\0')
+        {
+            start_books = i + 1;
+            break;
+        }
+        int v1 = parse_number(&s);
+        s++;
+        int v2 = parse_number(&s);
+        before[v1][v2] = TRUE;
+    }
 }
 
 void solve1()
 {
-	read_before();
-	printf("%d %d\n", n, start_books);
+    read_before();
+    printf("%d %d\n", n, start_books);
 }
 ```
 
@@ -45,28 +45,28 @@ At 7:49, that looks like it works.
 ```c
 void solve1()
 {
-	read_before();
-	
-	num_t answer = 0;
-	for (int i = start_books; i < n; i++)
-	{
-		char *s = d[i];
-		int line[100];
-		int m = 0;
-		line[m++] = parse_number(&s);
-		while (*s == ',')
-		{
-			s++;
-			line[m++] = parse_number(&s);
-		}
-		bool correct = TRUE;
-		for (int j = 0; j + 1 < m && correct; j++)
-			correct = before[line[j]][line[j + 1]];
-		if (correct)
-			answer += line[m / 2];
-	}
-	printf("%d\n", answer);
-}	
+    read_before();
+    
+    num_t answer = 0;
+    for (int i = start_books; i < n; i++)
+    {
+        char *s = d[i];
+        int line[100];
+        int m = 0;
+        line[m++] = parse_number(&s);
+        while (*s == ',')
+        {
+            s++;
+            line[m++] = parse_number(&s);
+        }
+        bool correct = TRUE;
+        for (int j = 0; j + 1 < m && correct; j++)
+            correct = before[line[j]][line[j + 1]];
+        if (correct)
+            answer += line[m / 2];
+    }
+    printf("%d\n", answer);
+}    
 ```
 
 At 7:54, I summitted the answer and it was correct.
@@ -80,15 +80,15 @@ relationship is a complete relationship.
 
 void check_complete()
 {
-	for (int i = 10; i < 99; i++)
-		for (int j = i + 1; j < 99; j++)
-			if (before[i][j] == before[j][i])
-				printf("%d %d\n", i, j);
+    for (int i = 10; i < 99; i++)
+        for (int j = i + 1; j < 99; j++)
+            if (before[i][j] == before[j][i])
+                printf("%d %d\n", i, j);
 }
 
 void solve2()
 {
-	check_complete();
+    check_complete();
 }
 
 ```
@@ -101,29 +101,29 @@ they do not match.
 ```c
 void solve2()
 {
-	num_t answer = 0;
-	for (int i = start_books; i < n; i++)
-	{
-		char *s = d[i];
-		int line[100];
-		int m = 0;
-		line[m++] = parse_number(&s);
-		while (*s == ',')
-		{
-			s++;
-			line[m++] = parse_number(&s);
-		}
-		for (int k = 0; k < m; k++)
-			for (int j = m - 2; j >= 0; j--)
-				if (!before[line[j]][line[j + 1]])
-				{
-					int s = line[j];
-					line[j] = line[j + 1];
-					line[j + 1] = s;
-				}
-		answer += line[m / 2];
-	}
-	printf("%d\n", answer);
+    num_t answer = 0;
+    for (int i = start_books; i < n; i++)
+    {
+        char *s = d[i];
+        int line[100];
+        int m = 0;
+        line[m++] = parse_number(&s);
+        while (*s == ',')
+        {
+            s++;
+            line[m++] = parse_number(&s);
+        }
+        for (int k = 0; k < m; k++)
+            for (int j = m - 2; j >= 0; j--)
+                if (!before[line[j]][line[j + 1]])
+                {
+                    int s = line[j];
+                    line[j] = line[j + 1];
+                    line[j + 1] = s;
+                }
+        answer += line[m / 2];
+    }
+    printf("%d\n", answer);
 }
 ```
 
@@ -134,35 +134,35 @@ were incorrectly-ordered. Lets see if that works.
 ```c
 void solve2()
 {
-	num_t answer = 0;
-	for (int i = start_books; i < n; i++)
-	{
-		char *s = d[i];
-		int line[100];
-		int m = 0;
-		line[m++] = parse_number(&s);
-		while (*s == ',')
-		{
-			s++;
-			line[m++] = parse_number(&s);
-		}
-		bool correct = TRUE;
-		for (int j = 0; j + 1 < m && correct; j++)
-			correct = before[line[j]][line[j + 1]];
-		if (!correct)
-		{
-			for (int k = 0; k < m; k++)
-				for (int j = m - 2; j >= 0; j--)
-					if (!before[line[j]][line[j + 1]])
-					{
-						int s = line[j];
-						line[j] = line[j + 1];
-						line[j + 1] = s;
-					}
-			answer += line[m / 2];
-		}
-	}
-	printf("%d\n", answer);
+    num_t answer = 0;
+    for (int i = start_books; i < n; i++)
+    {
+        char *s = d[i];
+        int line[100];
+        int m = 0;
+        line[m++] = parse_number(&s);
+        while (*s == ',')
+        {
+            s++;
+            line[m++] = parse_number(&s);
+        }
+        bool correct = TRUE;
+        for (int j = 0; j + 1 < m && correct; j++)
+            correct = before[line[j]][line[j + 1]];
+        if (!correct)
+        {
+            for (int k = 0; k < m; k++)
+                for (int j = m - 2; j >= 0; j--)
+                    if (!before[line[j]][line[j + 1]])
+                    {
+                        int s = line[j];
+                        line[j] = line[j + 1];
+                        line[j + 1] = s;
+                    }
+            answer += line[m / 2];
+        }
+    }
+    printf("%d\n", answer);
 }
 ```
 
@@ -175,35 +175,35 @@ if I bubble in the other direction.
 ```c
 void solve2()
 {
-	num_t answer = 0;
-	for (int i = start_books; i < n; i++)
-	{
-		char *s = d[i];
-		int line[100];
-		int m = 0;
-		line[m++] = parse_number(&s);
-		while (*s == ',')
-		{
-			s++;
-			line[m++] = parse_number(&s);
-		}
-		bool correct = TRUE;
-		for (int j = 0; j + 1 < m && correct; j++)
-			correct = before[line[j]][line[j + 1]];
-		if (!correct)
-		{
-			for (int k = 0; k < m; k++)
-				for (int j = 0; j + 1 < m; j++)
-					if (!before[line[j]][line[j + 1]])
-					{
-						int s = line[j];
-						line[j] = line[j + 1];
-						line[j + 1] = s;
-					}
-			answer += line[m / 2];
-		}
-	}
-	printf("%d\n", answer);
+    num_t answer = 0;
+    for (int i = start_books; i < n; i++)
+    {
+        char *s = d[i];
+        int line[100];
+        int m = 0;
+        line[m++] = parse_number(&s);
+        while (*s == ',')
+        {
+            s++;
+            line[m++] = parse_number(&s);
+        }
+        bool correct = TRUE;
+        for (int j = 0; j + 1 < m && correct; j++)
+            correct = before[line[j]][line[j + 1]];
+        if (!correct)
+        {
+            for (int k = 0; k < m; k++)
+                for (int j = 0; j + 1 < m; j++)
+                    if (!before[line[j]][line[j + 1]])
+                    {
+                        int s = line[j];
+                        line[j] = line[j + 1];
+                        line[j + 1] = s;
+                    }
+            answer += line[m / 2];
+        }
+    }
+    printf("%d\n", answer);
 }
 ```
 

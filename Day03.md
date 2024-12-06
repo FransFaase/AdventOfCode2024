@@ -13,34 +13,34 @@ try to write the code in one time correctly and not trying to be as fast as poss
 
 void solve1()
 {
-	num_t sum = 0;
-	for (int i = 0; i < n; i++)
-	{
-		for (char *s = d[i]; *s != '\0'; s++)
-			if (strncmp(s, "mul(", 4) == 0)
-			{
-				char *r = s + 4;
-				if (is_digit(*r))
-				{
-					int v1 = 0;
-					for (int j = 0; j < 3 && is_digit(*r); j++)
-						v1 = 10 * v1 + *r++ - '0';
-					if (*r == ',')
-					{
-						r++;
-						if (is_digit(*r))
-						{
-							int v2 = 0;
-							for (int j = 0; j < 3 && is_digit(*r); j++)
-								v2 = 10 * v2 + *r++ - '0';
-							if (*r == ')')
-								sum += v1 * v2;
-						}
-					}
-				}
-			}
-	}
-	printf("%lld\n", sum);
+    num_t sum = 0;
+    for (int i = 0; i < n; i++)
+    {
+        for (char *s = d[i]; *s != '\0'; s++)
+            if (strncmp(s, "mul(", 4) == 0)
+            {
+                char *r = s + 4;
+                if (is_digit(*r))
+                {
+                    int v1 = 0;
+                    for (int j = 0; j < 3 && is_digit(*r); j++)
+                        v1 = 10 * v1 + *r++ - '0';
+                    if (*r == ',')
+                    {
+                        r++;
+                        if (is_digit(*r))
+                        {
+                            int v2 = 0;
+                            for (int j = 0; j < 3 && is_digit(*r); j++)
+                                v2 = 10 * v2 + *r++ - '0';
+                            if (*r == ')')
+                                sum += v1 * v2;
+                        }
+                    }
+                }
+            }
+    }
+    printf("%lld\n", sum);
 }
 ```
 
@@ -52,39 +52,39 @@ at 2:11:28.
 ```c
 void solve2()
 {
-	num_t sum = 0;
-	bool on = TRUE;
-	for (int i = 0; i < n; i++)
-	{
-		for (char *s = d[i]; *s != '\0'; s++)
-			if (on && strncmp(s, "mul(", 4) == 0)
-			{
-				char *r = s + 4;
-				if (is_digit(*r))
-				{
-					int v1 = 0;
-					for (int j = 0; j < 3 && is_digit(*r); j++)
-						v1 = 10 * v1 + *r++ - '0';
-					if (*r == ',')
-					{
-						r++;
-						if (is_digit(*r))
-						{
-							int v2 = 0;
-							for (int j = 0; j < 3 && is_digit(*r); j++)
-								v2 = 10 * v2 + *r++ - '0';
-							if (*r == ')')
-								sum += v1 * v2;
-						}
-					}
-				}
-			}
-			else if (strncmp(s, "don't()", 7) == 0)
-				on = FALSE;
-			else if (strncmp(s, "do()", 4) == 0)
-				on = TRUE;
-	}
-	printf("%lld\n", sum);
+    num_t sum = 0;
+    bool on = TRUE;
+    for (int i = 0; i < n; i++)
+    {
+        for (char *s = d[i]; *s != '\0'; s++)
+            if (on && strncmp(s, "mul(", 4) == 0)
+            {
+                char *r = s + 4;
+                if (is_digit(*r))
+                {
+                    int v1 = 0;
+                    for (int j = 0; j < 3 && is_digit(*r); j++)
+                        v1 = 10 * v1 + *r++ - '0';
+                    if (*r == ',')
+                    {
+                        r++;
+                        if (is_digit(*r))
+                        {
+                            int v2 = 0;
+                            for (int j = 0; j < 3 && is_digit(*r); j++)
+                                v2 = 10 * v2 + *r++ - '0';
+                            if (*r == ')')
+                                sum += v1 * v2;
+                        }
+                    }
+                }
+            }
+            else if (strncmp(s, "don't()", 7) == 0)
+                on = FALSE;
+            else if (strncmp(s, "do()", 4) == 0)
+                on = TRUE;
+    }
+    printf("%lld\n", sum);
 }
 
 ```

@@ -40,15 +40,21 @@ I started around 6:00 and found the answers rather easily.
 
 See further [Day 5](Day05.md).
 
+### Friday, December 6, 2024
 
+I only started working on the puzzle in the evening at 21:21.
+Took me about an hour to find both answers. For the second
+part I did implement the correct algorithm but I made a small
+bug that required some debugging using the example input.
 
-
-
+See further [Day 6](Day06.md).
 
 ### Personal stats
 
+```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+  6   15:39:56  56369      0   16:23:05  36826      0
   5   01:55:06  15602      0   02:14:16  12694      0
   4   00:20:16   4140      0   00:26:33   2814      0
   3   02:11:28  23652      0   02:16:43  18451      0

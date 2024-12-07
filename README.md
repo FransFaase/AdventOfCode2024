@@ -49,11 +49,21 @@ bug that required some debugging using the example input.
 
 See further [Day 6](Day06.md).
 
+### Saturday, December 7, 2024
+
+I started around 6:17, because I fell asleep again after
+my alarm went of. It went quite smooth except for the usual
+struggle with large numbers. I used `__int128`, but it might
+have worked with `long long`.
+
+See further [Day 7](Day07.md).
+
 ### Personal stats
 
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+  7   00:56:57   8027      0   01:06:07   7159      0
   6   15:39:56  56369      0   16:23:05  36826      0
   5   01:55:06  15602      0   02:14:16  12694      0
   4   00:20:16   4140      0   00:26:33   2814      0

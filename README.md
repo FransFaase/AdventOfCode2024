@@ -58,6 +58,8 @@ have worked with `long long`.
 
 See further [Day 7](Day07.md).
 
+### Sunday, December 8, 2024
+
 I started at 6:00. Only compiled my code three times to find
 the two solutions. The second was because I had not realized
 that the towers were also to be counted. Only needed a very

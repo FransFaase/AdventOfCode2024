@@ -58,11 +58,19 @@ have worked with `long long`.
 
 See further [Day 7](Day07.md).
 
+I started at 6:00. Only compiled my code three times to find
+the two solutions. The second was because I had not realized
+that the towers were also to be counted. Only needed a very
+small change to fix that.
+
+See further [Day 8](Day08.md).
+
 ### Personal stats
 
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+  8   00:13:34   1312      0   00:19:34   1196      0
   7   00:56:57   8027      0   01:06:07   7159      0
   6   15:39:56  56369      0   16:23:05  36826      0
   5   01:55:06  15602      0   02:14:16  12694      0
@@ -70,5 +78,6 @@ Day       Time   Rank  Score       Time   Rank  Score
   3   02:11:28  23652      0   02:16:43  18451      0
   2   00:31:48   9876      0   02:01:06  13575      0
   1   00:18:59   6367      0   00:25:06   6060      0
+
 ```
 

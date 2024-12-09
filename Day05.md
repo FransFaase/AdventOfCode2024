@@ -209,7 +209,7 @@ void solve2()
 
 It does return the same answer for my input.
 
-### Lucky
+### Lucky?
 
 I wonder whether I have just been luck with finding a solution for the second
 part.
@@ -217,8 +217,8 @@ part.
 ```c
 int main(int argc, char *argv[])
 {
-	...
-	analyse();
+    ...
+    analyse();
 }
 
 int count;
@@ -230,34 +230,34 @@ int m_line;
 
 void search(int j)
 {
-	if (j == m_line)
-	{
-		count++;
-		if (middle == -1)
-			middle = line[m_line / 2];
-		else if (middle != line[m_line / 2])
-			all_same = FALSE;
-		return;
-	}
-	
-	for (int j1 = 0; j1 < m_line; j1++)
-		if (!used[j1])
-		{
-			used[j1] = TRUE;
-			bool possible = TRUE;
-			for (int j2 = 0; j2 < m_line && possible; j2++)
-				possible = used[j2] && !before[line[j2]][line[j1]];
-			if (possible)
-				search(j + 1);
-			used[j1] = FALSE;
-		}
+    if (j == m_line)
+    {
+        count++;
+        if (middle == -1)
+            middle = line[m_line / 2];
+        else if (middle != line[m_line / 2])
+            all_same = FALSE;
+        return;
+    }
+    
+    for (int j1 = 0; j1 < m_line; j1++)
+        if (!used[j1])
+        {
+            used[j1] = TRUE;
+            bool possible = TRUE;
+            for (int j2 = 0; j2 < m_line && possible; j2++)
+                possible = used[j2] && !before[line[j2]][line[j1]];
+            if (possible)
+                search(j + 1);
+            used[j1] = FALSE;
+        }
 }
 
 void analyse()
 {
-	bool all_one_sort = TRUE;
-	for (int i = 0; i < n; i++)
-	{
+    bool all_one_sort = TRUE:
+    for (int i = 0; i < n; i++)
+    {
         char *s = d[i];
         int m_line = 0;
         line[m_line++] = parse_number(&s);
@@ -272,12 +272,12 @@ void analyse()
         all_same = TRUE;
         search(0);
         if (!all_same || count != 1)
-        	printf("%d: %d %d\n", i, middle, all_same);
+            printf("%d: %d %d\n", i, middle, all_same);
         if (count != 1)
-        	all_one_sort = FALSE;
+            all_one_sort = FALSE;
     }
     if (all_one_sort)
-    	printf("All lines have but one sort order\n");
+        printf("All lines have but one sort order\n");
 }
 ```
 

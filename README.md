@@ -75,11 +75,19 @@ small change to fix that.
 
 See further [Day 8](Day08.md).
 
+### Monday, December 9, 2024
+
+I started at 6:00. It took me almost three hours to solve
+both puzzles.
+
+See further [Day 9](Day09.md).
+
 ### Personal stats
 
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+  9   00:55:58   6812      0   02:52:45   7830      0
   8   00:13:34   1312      0   00:19:34   1196      0
   7   00:56:57   8027      0   01:06:07   7159      0
   6   15:39:56  56369      0   16:23:05  36826      0
@@ -88,6 +96,6 @@ Day       Time   Rank  Score       Time   Rank  Score
   3   02:11:28  23652      0   02:16:43  18451      0
   2   00:31:48   9876      0   02:01:06  13575      0
   1   00:18:59   6367      0   00:25:06   6060      0
-
+ 
 ```
 

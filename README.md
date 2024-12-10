@@ -82,11 +82,24 @@ both puzzles.
 
 See further [Day 9](Day09.md).
 
+### Monday, December 9, 2024
+
+I started at 6:00. It took me a little over one hour, a bit
+longer than I had expected to solve both puzzles. My first
+incorrect anwer for the first part, was actually the answer
+for the second part. The first part took me so long, because
+I thought to be smart and take a short cut by not initializing
+some array correctly, which took a bit more than 20 minutes
+to fix.
+
+See further [Day 10](Day10.md).
+
 ### Personal stats
 
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 10   00:59:14   7794      0   01:01:07   7132      0
   9   00:55:58   6812      0   02:52:45   7830      0
   8   00:13:34   1312      0   00:19:34   1196      0
   7   00:56:57   8027      0   01:06:07   7159      0

@@ -8,7 +8,7 @@ and than calls the function `solve1` and `solve2`.
 ```c
 void solve1()
 {
-	printf("%d %d\n", n, m);
+    printf("%d %d\n", n, m);
 }
 ```
 
@@ -21,30 +21,30 @@ num_t map2[40][40];
 
 void solve1()
 {
-	for (int i = 0; i < n; i++)
-		for (int j = 0; j < m; j++)
-			map1[i][j] = d[i][j] == '0' ? 1 : 0;
-	
-	for (char h = '1'; h <= '9'; h++)
-	{
-		for (int i = 0; i < n; i++)
-			for (int j = 0; j < m; j++)
-				map2[i][j] =  d[i][j] == h
-							?   (i > 0 ? map1[i-1][j] : 0)
-							  + (i + 1 < n ? map1[i+1][j] : 0)
-							  + (j > 0 ? map1[i][j-1] : 0)
-							  + (j + 1 < m ? map1[i][j+1] : 0)
-							: 0;
-		for (int i = 0; i < n; i++)
-			for (int j = 0; j < m; j++)
-				map1[i][j] = map2[i][j];
-	}
-	
-	num_t count = 0;
-	for (int i = 0; i < n; i++)
-		for (int j = 0; j < m; j++)
-			count += map1[i][j];
-	printf("%lld", count);
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < m; j++)
+            map1[i][j] = d[i][j] == '0' ? 1 : 0;
+    
+    for (char h = '1'; h <= '9'; h++)
+    {
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < m; j++)
+                map2[i][j] =  d[i][j] == h
+                            ?   (i > 0 ? map1[i-1][j] : 0)
+                              + (i + 1 < n ? map1[i+1][j] : 0)
+                              + (j > 0 ? map1[i][j-1] : 0)
+                              + (j + 1 < m ? map1[i][j+1] : 0)
+                            : 0;
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < m; j++)
+                map1[i][j] = map2[i][j];
+    }
+    
+    num_t count = 0;
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < m; j++)
+            count += map1[i][j];
+    printf("%lld", count);
 }
 ```
 
@@ -62,37 +62,37 @@ At 6:21, it return 0 for the first example. Lets add some debugging code:
 ```c
 void solve1()
 {
-	for (int i = 0; i < n; i++)
-		for (int j = 0; j < m; j++)
-			map1[i][j] = d[i][j] == '0' ? 1 : 0;
-	
-	for (char h = '1'; h <= '9'; h++)
-	{
-		for (int i = 0; i < n; i++)
-			for (int j = 0; j < m; j++)
-				map2[i][j] =  d[i][j] == h
-							?   (i > 0 ? map1[i-1][j] : 0)
-							  + (i + 1 < n ? map1[i+1][j] : 0)
-							  + (j > 0 ? map1[i][j-1] : 0)
-							  + (j + 1 < m ? map1[i][j+1] : 0)
-							: 0;
-		for (int i = 0; i < n; i++)
-		{
-			for (int j = 0; j < m; j++)
-			{
-				printf("%2d", map2[i][j]);
-				map1[i][j] = map2[i][j];
-			}
-			printf("\n");
-		}
-		printf("\n");
-	}
-	
-	num_t count = 0;
-	for (int i = 0; i < n; i++)
-		for (int j = 0; j < m; j++)
-			count += map1[i][j];
-	printf("%lld\n", count);
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < m; j++)
+            map1[i][j] = d[i][j] == '0' ? 1 : 0;
+    
+    for (char h = '1'; h <= '9'; h++)
+    {
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < m; j++)
+                map2[i][j] =  d[i][j] == h
+                            ?   (i > 0 ? map1[i-1][j] : 0)
+                              + (i + 1 < n ? map1[i+1][j] : 0)
+                              + (j > 0 ? map1[i][j-1] : 0)
+                              + (j + 1 < m ? map1[i][j+1] : 0)
+                            : 0;
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < m; j++)
+            {
+                printf("%2d", map2[i][j]);
+                map1[i][j] = map2[i][j];
+            }
+            printf("\n");
+        }
+        printf("\n");
+    }
+    
+    num_t count = 0;
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < m; j++)
+            count += map1[i][j];
+    printf("%lld\n", count);
 }
 ```
 
@@ -111,41 +111,41 @@ void pre() { use_sample = FALSE; }
 
 void solve1()
 {
-	for (int i1 = 0; i1 < n; i1++)
-		for (int j1 = 0; j1 < m; j1++)
-			map1[i1][j1] = 0;
-	
-	num_t count = 0;
-	for (int i1 = 0; i1 < n; i1++)
-		for (int j1 = 0; j1 < m; j1++)
-			if (d[i1][j1] == '0')
-			{
-				map1[i1][j1] = 1;
+    for (int i1 = 0; i1 < n; i1++)
+        for (int j1 = 0; j1 < m; j1++)
+            map1[i1][j1] = 0;
+    
+    num_t count = 0;
+    for (int i1 = 0; i1 < n; i1++)
+        for (int j1 = 0; j1 < m; j1++)
+            if (d[i1][j1] == '0')
+            {
+                map1[i1][j1] = 1;
 
-				for (char h = '1'; h <= '9'; h++)
-				{
-					for (int i = 0; i < n; i++)
-						for (int j = 0; j < m; j++)
-							map2[i][j] =  d[i][j] == h
-										?   (i > 0 ? map1[i-1][j] : 0)
-										  + (i + 1 < n ? map1[i+1][j] : 0)
-										  + (j > 0 ? map1[i][j-1] : 0)
-										  + (j + 1 < m ? map1[i][j+1] : 0)
-										: 0;
-					for (int i = 0; i < n; i++)
-						for (int j = 0; j < m; j++)
-							map1[i][j] = map2[i][j];
-				}
-				
-				num_t count = 0;
-				for (int i = 0; i < n; i++)
-					for (int j = 0; j < m; j++)
-						if (map1[i][j] != 0)
-							count++;
-				
-				map1[i1][j1] = 0;
-			}
-	printf("%lld\n", count);
+                for (char h = '1'; h <= '9'; h++)
+                {
+                    for (int i = 0; i < n; i++)
+                        for (int j = 0; j < m; j++)
+                            map2[i][j] =  d[i][j] == h
+                                        ?   (i > 0 ? map1[i-1][j] : 0)
+                                          + (i + 1 < n ? map1[i+1][j] : 0)
+                                          + (j > 0 ? map1[i][j-1] : 0)
+                                          + (j + 1 < m ? map1[i][j+1] : 0)
+                                        : 0;
+                    for (int i = 0; i < n; i++)
+                        for (int j = 0; j < m; j++)
+                            map1[i][j] = map2[i][j];
+                }
+                
+                num_t count = 0;
+                for (int i = 0; i < n; i++)
+                    for (int j = 0; j < m; j++)
+                        if (map1[i][j] != 0)
+                            count++;
+                
+                map1[i1][j1] = 0;
+            }
+    printf("%lld\n", count);
 }
 ```
 
@@ -158,40 +158,40 @@ void pre() { use_sample = FALSE; }
 
 void solve1()
 {
-	for (int i1 = 0; i1 < n; i1++)
-		for (int j1 = 0; j1 < m; j1++)
-			map1[i1][j1] = 0;
-	
-	num_t count = 0;
-	for (int i1 = 0; i1 < n; i1++)
-		for (int j1 = 0; j1 < m; j1++)
-			if (d[i1][j1] == '0')
-			{
-				map1[i1][j1] = 1;
+    for (int i1 = 0; i1 < n; i1++)
+        for (int j1 = 0; j1 < m; j1++)
+            map1[i1][j1] = 0;
+    
+    num_t count = 0;
+    for (int i1 = 0; i1 < n; i1++)
+        for (int j1 = 0; j1 < m; j1++)
+            if (d[i1][j1] == '0')
+            {
+                map1[i1][j1] = 1;
 
-				for (char h = '1'; h <= '9'; h++)
-				{
-					for (int i = 0; i < n; i++)
-						for (int j = 0; j < m; j++)
-							map2[i][j] =  d[i][j] == h
-										?   (i > 0 ? map1[i-1][j] : 0)
-										  + (i + 1 < n ? map1[i+1][j] : 0)
-										  + (j > 0 ? map1[i][j-1] : 0)
-										  + (j + 1 < m ? map1[i][j+1] : 0)
-										: 0;
-					for (int i = 0; i < n; i++)
-						for (int j = 0; j < m; j++)
-							map1[i][j] = map2[i][j];
-				}
-				
-				for (int i = 0; i < n; i++)
-					for (int j = 0; j < m; j++)
-						if (map1[i][j] != 0)
-							count++;
-				
-				map1[i1][j1] = 0;
-			}
-	printf("%lld\n", count);
+                for (char h = '1'; h <= '9'; h++)
+                {
+                    for (int i = 0; i < n; i++)
+                        for (int j = 0; j < m; j++)
+                            map2[i][j] =  d[i][j] == h
+                                        ?   (i > 0 ? map1[i-1][j] : 0)
+                                          + (i + 1 < n ? map1[i+1][j] : 0)
+                                          + (j > 0 ? map1[i][j-1] : 0)
+                                          + (j + 1 < m ? map1[i][j+1] : 0)
+                                        : 0;
+                    for (int i = 0; i < n; i++)
+                        for (int j = 0; j < m; j++)
+                            map1[i][j] = map2[i][j];
+                }
+                
+                for (int i = 0; i < n; i++)
+                    for (int j = 0; j < m; j++)
+                        if (map1[i][j] != 0)
+                            count++;
+                
+                map1[i1][j1] = 0;
+            }
+    printf("%lld\n", count);
 }
 ```
 
@@ -210,43 +210,43 @@ out the numbers for the various starting points.
 
 void solve1()
 {
-	for (int i1 = 0; i1 < n; i1++)
-		for (int j1 = 0; j1 < m; j1++)
-			map1[i1][j1] = 0;
-	
-	num_t count = 0;
-	for (int i1 = 0; i1 < n; i1++)
-		for (int j1 = 0; j1 < m; j1++)
-			if (d[i1][j1] == '0')
-			{
-				map1[i1][j1] = 1;
+    for (int i1 = 0; i1 < n; i1++)
+        for (int j1 = 0; j1 < m; j1++)
+            map1[i1][j1] = 0;
+    
+    num_t count = 0;
+    for (int i1 = 0; i1 < n; i1++)
+        for (int j1 = 0; j1 < m; j1++)
+            if (d[i1][j1] == '0')
+            {
+                map1[i1][j1] = 1;
 
-				for (char h = '1'; h <= '9'; h++)
-				{
-					for (int i = 0; i < n; i++)
-						for (int j = 0; j < m; j++)
-							map2[i][j] =  d[i][j] == h
-										?   (i > 0 ? map1[i-1][j] : 0)
-										  + (i + 1 < n ? map1[i+1][j] : 0)
-										  + (j > 0 ? map1[i][j-1] : 0)
-										  + (j + 1 < m ? map1[i][j+1] : 0)
-										: 0;
-					for (int i = 0; i < n; i++)
-						for (int j = 0; j < m; j++)
-							map1[i][j] = map2[i][j];
-				}
-				
-				num_t c = 0;
-				for (int i = 0; i < n; i++)
-					for (int j = 0; j < m; j++)
-						if (map1[i][j] != 0)
-							c++;
-				printf(" %d", c);
-				count += c;
-				
-				map1[i1][j1] = 0;
-			}
-	printf("%lld\n", count);
+                for (char h = '1'; h <= '9'; h++)
+                {
+                    for (int i = 0; i < n; i++)
+                        for (int j = 0; j < m; j++)
+                            map2[i][j] =  d[i][j] == h
+                                        ?   (i > 0 ? map1[i-1][j] : 0)
+                                          + (i + 1 < n ? map1[i+1][j] : 0)
+                                          + (j > 0 ? map1[i][j-1] : 0)
+                                          + (j + 1 < m ? map1[i][j+1] : 0)
+                                        : 0;
+                    for (int i = 0; i < n; i++)
+                        for (int j = 0; j < m; j++)
+                            map1[i][j] = map2[i][j];
+                }
+                
+                num_t c = 0;
+                for (int i = 0; i < n; i++)
+                    for (int j = 0; j < m; j++)
+                        if (map1[i][j] != 0)
+                            c++;
+                printf(" %d", c);
+                count += c;
+                
+                map1[i1][j1] = 0;
+            }
+    printf("%lld\n", count);
 }
 ```
 
@@ -257,55 +257,55 @@ incorrect value, which counts 4 instead of 3.
 
 void solve1()
 {
-	for (int i1 = 0; i1 < n; i1++)
-		for (int j1 = 0; j1 < m; j1++)
-			map1[i1][j1] = 0;
-	
-	num_t count = 0;
-	int t = 0;
-	for (int i1 = 0; i1 < n; i1++)
-		for (int j1 = 0; j1 < m; j1++)
-			if (d[i1][j1] == '0')
-			{
-				map1[i1][j1] = 1;
+    for (int i1 = 0; i1 < n; i1++)
+        for (int j1 = 0; j1 < m; j1++)
+            map1[i1][j1] = 0;
+    
+    num_t count = 0;
+    int t = 0;
+    for (int i1 = 0; i1 < n; i1++)
+        for (int j1 = 0; j1 < m; j1++)
+            if (d[i1][j1] == '0')
+            {
+                map1[i1][j1] = 1;
 
-				for (char h = '1'; h <= '9'; h++)
-				{
-					for (int i = 0; i < n; i++)
-						for (int j = 0; j < m; j++)
-							map2[i][j] =  d[i][j] == h
-										?   (i > 0 ? map1[i-1][j] : 0)
-										  + (i + 1 < n ? map1[i+1][j] : 0)
-										  + (j > 0 ? map1[i][j-1] : 0)
-										  + (j + 1 < m ? map1[i][j+1] : 0)
-										: 0;
-					for (int i = 0; i < n; i++)
-						for (int j = 0; j < m; j++)
-							map1[i][j] = map2[i][j];
-					if (t == 3)
-					{
-						for (int i = 0; i < n; i++)
-						{
-							for (int j = 0; j < m; j++)
-								printf(" %c%c", d[i][j], map1[i][j] > 0 ? '*' : ' ');
-							printf("\n");
-						}
-						printf("\n");
-					}
-				}
-				
-				num_t c = 0;
-				for (int i = 0; i < n; i++)
-					for (int j = 0; j < m; j++)
-						if (map1[i][j] != 0)
-							c++;
-				printf("%d\n", c);
-				count += c;
-				
-				map1[i1][j1] = 0;
-				t++;
-			}
-	printf("%lld\n", count);
+                for (char h = '1'; h <= '9'; h++)
+                {
+                    for (int i = 0; i < n; i++)
+                        for (int j = 0; j < m; j++)
+                            map2[i][j] =  d[i][j] == h
+                                        ?   (i > 0 ? map1[i-1][j] : 0)
+                                          + (i + 1 < n ? map1[i+1][j] : 0)
+                                          + (j > 0 ? map1[i][j-1] : 0)
+                                          + (j + 1 < m ? map1[i][j+1] : 0)
+                                        : 0;
+                    for (int i = 0; i < n; i++)
+                        for (int j = 0; j < m; j++)
+                            map1[i][j] = map2[i][j];
+                    if (t == 3)
+                    {
+                        for (int i = 0; i < n; i++)
+                        {
+                            for (int j = 0; j < m; j++)
+                                printf(" %c%c", d[i][j], map1[i][j] > 0 ? '*' : ' ');
+                            printf("\n");
+                        }
+                        printf("\n");
+                    }
+                }
+                
+                num_t c = 0;
+                for (int i = 0; i < n; i++)
+                    for (int j = 0; j < m; j++)
+                        if (map1[i][j] != 0)
+                            c++;
+                printf("%d\n", c);
+                count += c;
+                
+                map1[i1][j1] = 0;
+                t++;
+            }
+    printf("%lld\n", count);
 }
 ```
 
@@ -315,59 +315,59 @@ At 6:55, I see that something goes wrong at the start.
 
 void solve1()
 {
-	for (int i1 = 0; i1 < n; i1++)
-		for (int j1 = 0; j1 < m; j1++)
-			map1[i1][j1] = 0;
-	
-	num_t count = 0;
-	int t = 0;
-	for (int i1 = 0; i1 < n; i1++)
-		for (int j1 = 0; j1 < m; j1++)
-			if (d[i1][j1] == '0')
-			{
-				for (int i = 0; i < n; i++)
-					for (int j = 0; j < m; j++)
-						map1[i][j] = 0;
-	
-				map1[i1][j1] = 1;
+    for (int i1 = 0; i1 < n; i1++)
+        for (int j1 = 0; j1 < m; j1++)
+            map1[i1][j1] = 0;
+    
+    num_t count = 0;
+    int t = 0;
+    for (int i1 = 0; i1 < n; i1++)
+        for (int j1 = 0; j1 < m; j1++)
+            if (d[i1][j1] == '0')
+            {
+                for (int i = 0; i < n; i++)
+                    for (int j = 0; j < m; j++)
+                        map1[i][j] = 0;
+    
+                map1[i1][j1] = 1;
 
-				for (char h = '1'; h <= '9'; h++)
-				{
-					for (int i = 0; i < n; i++)
-						for (int j = 0; j < m; j++)
-							map2[i][j] =  d[i][j] == h
-										?   (i > 0 ? map1[i-1][j] : 0)
-										  + (i + 1 < n ? map1[i+1][j] : 0)
-										  + (j > 0 ? map1[i][j-1] : 0)
-										  + (j + 1 < m ? map1[i][j+1] : 0)
-										: 0;
-					for (int i = 0; i < n; i++)
-						for (int j = 0; j < m; j++)
-							map1[i][j] = map2[i][j];
-					if (t == 3)
-					{
-						for (int i = 0; i < n; i++)
-						{
-							for (int j = 0; j < m; j++)
-								printf(" %c%c", d[i][j], map1[i][j] > 0 ? '*' : ' ');
-							printf("\n");
-						}
-						printf("\n");
-					}
-				}
-				
-				num_t c = 0;
-				for (int i = 0; i < n; i++)
-					for (int j = 0; j < m; j++)
-						if (map1[i][j] != 0)
-							c++;
-				printf("%d\n", c);
-				count += c;
-				
-				map1[i1][j1] = 0;
-				t++;
-			}
-	printf("%lld\n", count);
+                for (char h = '1'; h <= '9'; h++)
+                {
+                    for (int i = 0; i < n; i++)
+                        for (int j = 0; j < m; j++)
+                            map2[i][j] =  d[i][j] == h
+                                        ?   (i > 0 ? map1[i-1][j] : 0)
+                                          + (i + 1 < n ? map1[i+1][j] : 0)
+                                          + (j > 0 ? map1[i][j-1] : 0)
+                                          + (j + 1 < m ? map1[i][j+1] : 0)
+                                        : 0;
+                    for (int i = 0; i < n; i++)
+                        for (int j = 0; j < m; j++)
+                            map1[i][j] = map2[i][j];
+                    if (t == 3)
+                    {
+                        for (int i = 0; i < n; i++)
+                        {
+                            for (int j = 0; j < m; j++)
+                                printf(" %c%c", d[i][j], map1[i][j] > 0 ? '*' : ' ');
+                            printf("\n");
+                        }
+                        printf("\n");
+                    }
+                }
+                
+                num_t c = 0;
+                for (int i = 0; i < n; i++)
+                    for (int j = 0; j < m; j++)
+                        if (map1[i][j] != 0)
+                            c++;
+                printf("%d\n", c);
+                count += c;
+                
+                map1[i1][j1] = 0;
+                t++;
+            }
+    printf("%lld\n", count);
 }
 ```
 At 6:58, that returns the correct answer for the last example input.
@@ -377,7 +377,7 @@ At 6:58, that returns the correct answer for the last example input.
 void pre() { use_sample = FALSE; }
 ```
 
-
+At 6:59:14, that found the correct answer.
 
 ### Second part of the puzzle.
 
@@ -388,33 +388,35 @@ So, the second puzzle, is what I did for the first.
 ```c
 void solve2()
 {
-	for (int i = 0; i < n; i++)
-		for (int j = 0; j < m; j++)
-			map1[i][j] = d[i][j] == '0' ? 1 : 0;
-	
-	for (char h = '1'; h <= '9'; h++)
-	{
-		for (int i = 0; i < n; i++)
-			for (int j = 0; j < m; j++)
-				map2[i][j] =  d[i][j] == h
-							?   (i > 0 ? map1[i-1][j] : 0)
-							  + (i + 1 < n ? map1[i+1][j] : 0)
-							  + (j > 0 ? map1[i][j-1] : 0)
-							  + (j + 1 < m ? map1[i][j+1] : 0)
-							: 0;
-		for (int i = 0; i < n; i++)
-			for (int j = 0; j < m; j++)
-				map1[i][j] = map2[i][j];
-	}
-	
-	num_t count = 0;
-	for (int i = 0; i < n; i++)
-		for (int j = 0; j < m; j++)
-			count += map1[i][j];
-	printf("%lld", count);
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < m; j++)
+            map1[i][j] = d[i][j] == '0' ? 1 : 0;
+    
+    for (char h = '1'; h <= '9'; h++)
+    {
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < m; j++)
+                map2[i][j] =  d[i][j] == h
+                            ?   (i > 0 ? map1[i-1][j] : 0)
+                              + (i + 1 < n ? map1[i+1][j] : 0)
+                              + (j > 0 ? map1[i][j-1] : 0)
+                              + (j + 1 < m ? map1[i][j+1] : 0)
+                            : 0;
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < m; j++)
+                map1[i][j] = map2[i][j];
+    }
+    
+    num_t count = 0;
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < m; j++)
+            count += map1[i][j];
+    printf("%lld", count);
 }
 
 ```
+
+At 7:01:07, that found the correct answer.
 
 ### Executing this page
 

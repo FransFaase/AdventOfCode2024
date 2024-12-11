@@ -82,7 +82,7 @@ both puzzles.
 
 See further [Day 9](Day09.md).
 
-### Monday, December 9, 2024
+### Tuesday, December 10, 2024
 
 I started at 6:00. It took me a little over one hour, a bit
 longer than I had expected to solve both puzzles. My first
@@ -94,11 +94,17 @@ to fix.
 
 See further [Day 10](Day10.md).
 
+### Wednesday, December 11, 2024
+
+I had no time in the morning, due to some company outing
+yesterday evening, but I did read the  
+
 ### Personal stats
 
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 11   13:44:40  40313      0   13:45:48  30010      0
  10   00:59:14   7794      0   01:01:07   7132      0
   9   00:55:58   6812      0   02:52:45   7830      0
   8   00:13:34   1312      0   00:19:34   1196      0

@@ -97,7 +97,11 @@ See further [Day 10](Day10.md).
 ### Wednesday, December 11, 2024
 
 I had no time in the morning, due to some company outing
-yesterday evening, but I did read the  
+yesterday evening, but I did read the puzzle and had some
+time during the day to think about how to solve it. I anticipated
+the second part of the puzzle, so, after finding the solution
+for the first part, it was but a little more than a minute
+for finding the solution for the second part.
 
 ### Personal stats
 

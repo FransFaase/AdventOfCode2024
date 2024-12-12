@@ -103,11 +103,26 @@ the second part of the puzzle, so, after finding the solution
 for the first part, it was but a little more than a minute
 for finding the solution for the second part.
 
+See further [Day 11](Day11.md).
+
+### Thursday, December 12, 2024
+
+I started at 6:00. I had to deal with a nasty bug in the
+`dd` function that I wrote (there was a `;` where there
+should have been a `&&`), for solving the first part.
+After I fixed it, I rather quickly found the answer to
+both parts of the puzzle. I have added the `dd` function
+to [my standard library](Std.md), because I already has
+written it several times.
+
+See further [Day 11](Day11.md).
+
 ### Personal stats
 
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 12   00:30:22   3521      0   00:41:48   1091      0
  11   13:44:40  40313      0   13:45:48  30010      0
  10   00:59:14   7794      0   01:01:07   7132      0
   9   00:55:58   6812      0   02:52:45   7830      0
@@ -119,6 +134,5 @@ Day       Time   Rank  Score       Time   Rank  Score
   3   02:11:28  23652      0   02:16:43  18451      0
   2   00:31:48   9876      0   02:01:06  13575      0
   1   00:18:59   6367      0   00:25:06   6060      0
- 
 ```
 

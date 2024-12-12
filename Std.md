@@ -73,6 +73,9 @@ void read_input(const char *day)
     }
 }
 
+char dd(int i, int j) { return i >= 0 && i < n && j >= 0 && j < m ? d[i][j] : ' '; }
+
+
 void pre()
 {
 }

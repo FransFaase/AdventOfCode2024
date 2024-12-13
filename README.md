@@ -115,13 +115,23 @@ both parts of the puzzle. I have added the `dd` function
 to [my standard library](Std.md), because I already has
 written it several times.
 
-See further [Day 11](Day11.md).
+See further [Day 12](Day12.md).
+
+### Wednesday, December 11, 2024
+
+I had no time in the morning, but I did read the puzzle
+and thought a bit about it during the day. I started
+working around 21:23 in the evening and found both answers
+around 22:05:15.
+
+See further [Day 13](Day13.md).
 
 ### Personal stats
 
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 13   16:03:20  30707      0   16:05:15  25241      0
  12   00:30:22   3521      0   00:41:48   1091      0
  11   13:44:40  40313      0   13:45:48  30010      0
  10   00:59:14   7794      0   01:01:07   7132      0
@@ -134,5 +144,6 @@ Day       Time   Rank  Score       Time   Rank  Score
   3   02:11:28  23652      0   02:16:43  18451      0
   2   00:31:48   9876      0   02:01:06  13575      0
   1   00:18:59   6367      0   00:25:06   6060      0
+
 ```
 

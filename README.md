@@ -117,7 +117,7 @@ written it several times.
 
 See further [Day 12](Day12.md).
 
-### Wednesday, December 11, 2024
+### Friday, December 13, 2024
 
 I had no time in the morning, but I did read the puzzle
 and thought a bit about it during the day. I started
@@ -126,11 +126,24 @@ around 22:05:15.
 
 See further [Day 13](Day13.md).
 
+### Saturday, December 14, 2024
+
+I had no time in the morning, but I did read the puzzle
+and thought a bit about it. At 13:49, I started working
+on the puzzle and rather quickly found the answer in one
+try. The second part, with its vague description, was a
+little more work, but honestly, also a bit more fun, in
+trying to figure out what was meant.
+
+See further [Day 14](Day14.md).
+
+
 ### Personal stats
 
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 14   08:00:47  20196      0   09:52:42  18241      0
  13   16:03:20  30707      0   16:05:15  25241      0
  12   00:30:22   3521      0   00:41:48   1091      0
  11   13:44:40  40313      0   13:45:48  30010      0

@@ -800,6 +800,135 @@ This returned:
 
 ```
 
+### Check no doubles
+
+```c
+
+int main(int argc, char *argv[])
+{
+	...
+	check_no_double();
+}
+
+void check_no_double()
+{
+    num_t px[N];
+    num_t py[N];
+    num_t vx[N];
+    num_t vy[N]; 
+    for (int i = 0; i < n; i++)
+    {
+        char *s = d[i] + 2;
+        px[i] = parse_number(&s); s++;
+        py[i] = parse_number(&s); s += 3;
+        vx[i] = parse_number(&s); s++;
+        vy[i] = parse_number(&s);
+    }
+    int w = 101;
+    int h = 103;
+
+	for (int s = 0; s < 10403; s++)
+	{
+	    for (int x = 0; x < w; x++)
+	        for (int y = 0; y < h; y++)
+	            map[x][y] = '.';
+	
+	    int min_empty = h + w;
+	    
+	    for (int i = 0; i < n; i++)
+	    {
+	        num_t x = (px[i] + s * (vx[i] + w)) % w;
+	        num_t y = (py[i] + s * (vy[i] + h)) % h;
+	        if (x + y < min_empty)
+	            min_empty = x + y;
+	        if ((w - x) + y < min_empty)
+	            min_empty = (w - x) + y;
+	        if (map[x][y] == '.')
+	            map[x][y] = '1';
+	        else if (map[x][y] < '9')
+	            map[x][y]++;
+	    }
+	    
+	    int count_double = 0;
+	    for (int y = 0; y < h; y++)
+	        for (int x = 0; x < w; x++)
+	        	if (map[x][y] != '.' && map[x][y] != '1')
+	        		count_double++;
+	    if (count_double == 0)
+	    	printf("%d\n", s);
+	}
+}
+```
+
+```c
+
+int main(int argc, char *argv[])
+{
+	...
+	modified_no_double();
+}
+
+void modified_no_double()
+{
+    num_t px[N];
+    num_t py[N];
+    num_t vx[N];
+    num_t vy[N]; 
+    for (int i = 0; i < n; i++)
+    {
+        char *s = d[i] + 2;
+        px[i] = parse_number(&s); s++;
+        py[i] = parse_number(&s); s += 3;
+        vx[i] = parse_number(&s); s++;
+        vy[i] = parse_number(&s);
+    }
+    int w = 101;
+    int h = 103;
+
+	for (int ip = 0; ip < 100; ip++)
+	{
+		printf(".\n");
+		num_t vx0 = vx[ip];
+		num_t px0 = (px[ip] + 7338 * (vx[0] + w)) % w;	
+		for (int m = -10; m <= 10; m++)
+		{
+			vx[ip] = (w + vx0 + m) % w;
+			px[ip] = (px0 + (10403 - 7338) * (vx[ip] + w)) % w;
+			
+			for (int s = 0; s < 10403; s++)
+			{
+			    for (int x = 0; x < w; x++)
+			        for (int y = 0; y < h; y++)
+			            map[x][y] = '.';
+			
+			    int min_empty = h + w;
+			    
+			    for (int i = 0; i < n; i++)
+			    {
+			        num_t x = (px[i] + s * (vx[i] + w)) % w;
+			        num_t y = (py[i] + s * (vy[i] + h)) % h;
+			        if (x + y < min_empty)
+			            min_empty = x + y;
+			        if ((w - x) + y < min_empty)
+			            min_empty = (w - x) + y;
+			        if (map[x][y] == '.')
+			            map[x][y] = '1';
+			        else if (map[x][y] < '9')
+			            map[x][y]++;
+			    }
+			    
+			    int count_double = 0;
+			    for (int y = 0; y < h; y++)
+			        for (int x = 0; x < w; x++)
+			        	if (map[x][y] != '.' && map[x][y] != '1')
+			        		count_double++;
+			    if (count_double == 0 && s != 7338)
+			    	printf("%3d %2d: %d\n", ip, m, s);
+			}
+		}
+	}
+}
+```
 
 ### Executing this page
 

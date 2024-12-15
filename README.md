@@ -137,12 +137,25 @@ trying to figure out what was meant.
 
 See further [Day 14](Day14.md).
 
+### Saturday, December 15, 2024
+
+I decided to not set an alarm. I started reading the puzzle
+on 9:14 and got the answer to the first part of the puzzle
+in one try in about half an hour. The second part did take
+a bit longer. I did take a break to shower and while in the
+shower, I got some good ideas about how to progress. I had
+to do some debugging, but the bugs where in the initialization
+of the extended warehouse. I found the answer on 12:08:59.
+
+See further [Day 15](Day15.md).
+
 
 ### Personal stats
 
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 15   03:45:17  10074      0   06:08:59   7630      0
  14   08:00:47  20196      0   09:52:42  18241      0
  13   16:03:20  30707      0   16:05:15  25241      0
  12   00:30:22   3521      0   00:41:48   1091      0
@@ -157,6 +170,5 @@ Day       Time   Rank  Score       Time   Rank  Score
   3   02:11:28  23652      0   02:16:43  18451      0
   2   00:31:48   9876      0   02:01:06  13575      0
   1   00:18:59   6367      0   00:25:06   6060      0
-
 ```
 

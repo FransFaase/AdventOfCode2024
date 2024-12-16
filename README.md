@@ -149,12 +149,19 @@ of the extended warehouse. I found the answer on 12:08:59.
 
 See further [Day 15](Day15.md).
 
+### Monday, December 16, 2024
+
+I started at 6:00. It took me longer than expected to solve
+two puzzles.
+
+See further [Day 16](Day16.md).
 
 ### Personal stats
 
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 16   00:48:02   3193      0   01:31:07   2673      0
  15   03:45:17  10074      0   06:08:59   7630      0
  14   08:00:47  20196      0   09:52:42  18241      0
  13   16:03:20  30707      0   16:05:15  25241      0

@@ -156,11 +156,22 @@ two puzzles.
 
 See further [Day 16](Day16.md).
 
+### Tuesday, December 17, 2024
+
+I decided not wake up early, so I only started working on
+in the evening. Especially the last past took me a long
+time and am not very happy about the final program with which
+I found the solution, because it is a bit too much a brute force
+approach.
+
+See further [Day 17](Day17.md).
+
 ### Personal stats
 
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 17   12:31:21  20003      0   17:51:06  13469      0
  16   00:48:02   3193      0   01:31:07   2673      0
  15   03:45:17  10074      0   06:08:59   7630      0
  14   08:00:47  20196      0   09:52:42  18241      0

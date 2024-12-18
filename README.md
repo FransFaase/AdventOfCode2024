@@ -166,11 +166,22 @@ approach.
 
 See further [Day 17](Day17.md).
 
+### Wednesday, December 17, 2024
+
+Because yesterday evening, I spend a long time solving
+yesterday puzzle, I could not get up early. My plan was to
+solve the puzzles in the evening, but when I read the puzzle,
+I thought could do it in the morning. I managed to solve
+both parts.
+
+See further [Day 18](Day18.md).
+
 ### Personal stats
 
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 18   02:13:05   7569      0   02:33:26   7387      0
  17   12:31:21  20003      0   17:51:06  13469      0
  16   00:48:02   3193      0   01:31:07   2673      0
  15   03:45:17  10074      0   06:08:59   7630      0

@@ -7,8 +7,8 @@ and than calls the function `solve1` and `solve2`.
 
 ```c
 
-//bool mem[72][72]; -- later removed, because conflicting with next code.
-//int dist[72][72];
+bool mem[72][72];
+int dist[72][72];
 void solve1()
 {
     for (int i = 1; i < 72; i++)

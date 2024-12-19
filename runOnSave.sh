@@ -7,7 +7,7 @@ while true; do
     gcc day$1.c -g -o day$1 2>errors.txt
     if [ $? -eq 0 ]; then
       clear
-      ./day$1
+      time ./day$1
       echo Done
     else
       clear

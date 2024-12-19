@@ -166,7 +166,7 @@ approach.
 
 See further [Day 17](Day17.md).
 
-### Wednesday, December 17, 2024
+### Wednesday, December 18, 2024
 
 Because yesterday evening, I spend a long time solving
 yesterday puzzle, I could not get up early. My plan was to
@@ -176,11 +176,28 @@ both parts.
 
 See further [Day 18](Day18.md).
 
+### Wednesday, December 19, 2024
+
+In the morning, I started around 7:16 but did not finish the
+first part before walking to work. When walking home, I got
+a good idea to solve the first part. Still needed some debugging
+to get it correct. As I had expected, the solution was also a
+good approach for the second part, which only required some
+trivial adaptations. On the way walking to work, I did think
+about [constructing](https://en.wikipedia.org/wiki/Powerset_construction)
+a [deterministic finite automaton](https://en.wikipedia.org/wiki/Deterministic_finite_automaton)
+from the collection of strings. That would have been some
+considerable amount of work and not of much help for solving
+the second part.
+
+See further [Day 19](Day19.md).
+
 ### Personal stats
 
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 19   13:05:47  19872      0   13:11:49  17139      0
  18   02:13:05   7569      0   02:33:26   7387      0
  17   12:31:21  20003      0   17:51:06  13469      0
  16   00:48:02   3193      0   01:31:07   2673      0

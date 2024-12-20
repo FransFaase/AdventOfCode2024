@@ -192,11 +192,29 @@ the second part.
 
 See further [Day 19](Day19.md).
 
+### Thursday, December 20, 2024
+
+I started a little over six in the morning and finished the
+first part before breakfast. I made an attempt for the second
+part, but that did not work. First, I thought the cheat walk
+should only be through 'walls' and I implemented a check for
+that, but it did not work for the example input. When walking
+to work, I realized that I had double counted some solutions.
+In the evening, it still took me some time to figure out how
+to avoid the double counting, but when I did, it returned the
+correct answer for the example and also for my puzzle input.
+
+I did make use of `./day20 | sort | uniq -c` for counting the
+number of cheats per how much is saved.
+
+I did like this puzzle idea.
+
 ### Personal stats
 
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 20   01:21:01   4135      0   11:31:34  11246      0
  19   13:05:47  19872      0   13:11:49  17139      0
  18   02:13:05   7569      0   02:33:26   7387      0
  17   12:31:21  20003      0   17:51:06  13469      0

@@ -176,7 +176,7 @@ both parts.
 
 See further [Day 18](Day18.md).
 
-### Wednesday, December 19, 2024
+### Thursday, December 19, 2024
 
 In the morning, I started around 7:16 but did not finish the
 first part before walking to work. When walking home, I got
@@ -192,7 +192,7 @@ the second part.
 
 See further [Day 19](Day19.md).
 
-### Thursday, December 20, 2024
+### Friday, December 20, 2024
 
 I started a little over six in the morning and finished the
 first part before breakfast. I made an attempt for the second
@@ -209,11 +209,26 @@ number of cheats per how much is saved.
 
 I did like this puzzle idea.
 
+See further [Day 20](Day20.md).
+
+### Saturday, December 21, 2024
+
+I did read the puzzle text at the end of the morning and
+thought a bit about it during the day. I really struggled
+to start working on it and decided to start an investigative
+approach, also thinking about might be the second part. After
+a lot of debugging, I did find the solution for the firt part.
+When I read the text of the second part of the puzzle, I
+realized I only needed to replace a 2 by a 25.
+
+See further [Day 21](Day21.md).
+
 ### Personal stats
 
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 21   16:42:46  10423      0   16:45:17   6748      0
  20   01:21:01   4135      0   11:31:34  11246      0
  19   13:05:47  19872      0   13:11:49  17139      0
  18   02:13:05   7569      0   02:33:26   7387      0

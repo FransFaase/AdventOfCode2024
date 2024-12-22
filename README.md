@@ -223,11 +223,21 @@ realized I only needed to replace a 2 by a 25.
 
 See further [Day 21](Day21.md).
 
+### Sunday, December 22, 2024
+
+I started reading the puzzle around 9:45. It took me some time
+to find a fast implementation for the second part (using quite
+a bit of memory) that found the answers for both parts under
+a second.
+
+See further [Day 22](Day22.md).
+
 ### Personal stats
 
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 22   04:12:46   8674      0   06:22:40   8101      0
  21   16:42:46  10423      0   16:45:17   6748      0
  20   01:21:01   4135      0   11:31:34  11246      0
  19   13:05:47  19872      0   13:11:49  17139      0

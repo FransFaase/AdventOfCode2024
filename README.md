@@ -232,11 +232,19 @@ a second.
 
 See further [Day 22](Day22.md).
 
+### Monday, December 23, 2024
+
+I started at 6:00. Classical graph related algorithms. Besides
+the usual small bugs, it went rather smooth.
+
+See further [Day 23](Day23.md).
+
 ### Personal stats
 
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 23   00:30:40   3073      0   01:17:07   3191      0
  22   04:12:46   8674      0   06:22:40   8101      0
  21   16:42:46  10423      0   16:45:17   6748      0
  20   01:21:01   4135      0   11:31:34  11246      0

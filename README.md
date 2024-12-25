@@ -251,11 +251,21 @@ were used.
 
 See further [Day 24](Day24.md).
 
+### Wednesday, December 25, 2024
+
+I started at 6:00 and decided to go as fast as possible but
+by doing so, made one little mistake, which I found by 
+using the example input. Then I quickly spotted the error
+and found the correct answer.
+
+See further [Day 25](Day25.md).
+
 ### Personal stats
 
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 25   00:18:26   2060      0   00:18:51   1719      0
  24   11:49:06  15882      0   19:37:03   9004      0
  23   00:30:40   3073      0   01:17:07   3191      0
  22   04:12:46   8674      0   06:22:40   8101      0

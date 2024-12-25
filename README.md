@@ -239,11 +239,24 @@ the usual small bugs, it went rather smooth.
 
 See further [Day 23](Day23.md).
 
+### Tuesday, December 24, 2024
+
+I started reading the puzzle around 7:27 but failed to finish
+the first part in the morning. At 17:26, I continued and spend
+most of the remaining evening to find the solutions for both
+parts. I had to resort to a kind of hack to find the solution
+for the second part. Maybe I will work on finding a better
+method for finding the solution now that I know the rules that
+were used.
+
+See further [Day 24](Day24.md).
+
 ### Personal stats
 
 ```
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 24   11:49:06  15882      0   19:37:03   9004      0
  23   00:30:40   3073      0   01:17:07   3191      0
  22   04:12:46   8674      0   06:22:40   8101      0
  21   16:42:46  10423      0   16:45:17   6748      0
